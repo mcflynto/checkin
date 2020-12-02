@@ -62,6 +62,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def set_status
+    @user = current_user
+    @user.status = Time.now
+
+    puts @user.status
+
+    @user.save
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
